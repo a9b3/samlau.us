@@ -14,7 +14,7 @@ class HeroContainer extends Component {
 
   _handleScroll(e) {
     const scrollTop = e.srcElement.body.scrollTop;
-    if (scrollTop > 20) {
+    if (scrollTop > 100) {
       this.setState({
         showChevron: 'hero__indicator--off',
       });
