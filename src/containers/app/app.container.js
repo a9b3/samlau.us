@@ -16,15 +16,7 @@ class AppContainer extends Component {
         <NavbarContainer />
         {this.props.children}
 
-        {(() => {
-          if (this.props.modal.showModal) {
-            return (
-              <ReactTransitionGroup>
-                <ModalContainer />
-              </ReactTransitionGroup>
-            )
-          }
-        })()}
+        <ModalContainer />
       </div>
     );
   }
