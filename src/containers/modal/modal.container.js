@@ -25,10 +25,12 @@ class ModalContainer extends Component {
   }
 
   render() {
-    const modalShow = this.props.modal.showModal;
+    const {
+      modal,
+    } = this.props;
 
     return (
-      <div className={`modal ${this.showHide(modalShow)}`}
+      <div className={`modal ${this.showHide(modal.showModal)}`}
         onClick={this.closeModalHandler}>
         <div className="modal__box">
           <ContactModalContainer closeModal={this.props.flipModal}/>
