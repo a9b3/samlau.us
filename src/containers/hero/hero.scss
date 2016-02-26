@@ -30,4 +30,16 @@
     padding: 1.5em;
     text-transform: lowercase;
   }
+
+  &__indicator {
+    @include rem-font-size(2);
+    opacity: .5;
+    width: 100%;
+    text-align: center;
+    padding: 2em;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    animation: bounce 1s infinite;
+  }
 }

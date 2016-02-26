@@ -3,6 +3,7 @@ import React, { Component, PropTypes } from 'react';
 import { connect } from 'react-redux'
 import NavbarContainer from '../navbar/navbar.container.js';
 import ModalContainer from '../modal/modal.container.js';
+import ReactTransitionGroup from 'react-addons-transition-group';
 
 class AppContainer extends Component {
   constructor() {
@@ -17,7 +18,11 @@ class AppContainer extends Component {
 
         {(() => {
           if (this.props.modal.showModal) {
-            return <ModalContainer />;
+            return (
+              <ReactTransitionGroup>
+                <ModalContainer />
+              </ReactTransitionGroup>
+            )
           }
         })()}
       </div>

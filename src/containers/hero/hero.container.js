@@ -7,6 +7,10 @@ class HeroContainer extends Component {
     super();
   }
 
+  componentDidMount() {
+    console.log('here');
+  }
+
   render() {
     const hero = {
       name: 'Sam Lau',
@@ -31,6 +35,10 @@ class HeroContainer extends Component {
           <div className="hero__tagline">
             {hero.tagline}
           </div>
+        </div>
+
+        <div className="hero__indicator">
+          <i className="fa fa-chevron-down"></i>
         </div>
       </div>
     );

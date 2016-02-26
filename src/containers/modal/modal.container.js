@@ -20,6 +20,10 @@ class ModalContainer extends Component {
     return (modalShow) ? 'modal--show' : '';
   }
 
+  componentWillLeave(cb) {
+    debugger;
+  }
+
   render() {
     const modalShow = this.props.modal.showModal;
 
