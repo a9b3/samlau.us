@@ -4,12 +4,8 @@ import React, { PropTypes } from 'react';
 const WorkComponent = props =>
 <div className="work">
   <div className="work__img">
-  <div className="work__img__img"
-    style={{
-      backgroundImage: `url('${props.imageUrl}')`
-    }}
-    alt="preview" />
-</div>
+    <img src={props.imageUrl} alt="preview" />
+  </div>
   <div className="work__summary">
     <div className="work__summary__wrapper">
       <div className="work__summary__header">
