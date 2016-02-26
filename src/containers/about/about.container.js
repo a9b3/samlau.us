@@ -20,9 +20,8 @@ class AboutContainer extends Component {
     return (
       <div className="about">
         <div className="about__profile">
-          <div className="about__profile__pic" style={{
-            backgroundImage: `url(${about.picUrl})`
-          }}>
+          <div className="about__profile__pic">
+            <img src={about.picUrl} alt="avatar" />
           </div>
           <div className="about__profile__summary">
             <div>

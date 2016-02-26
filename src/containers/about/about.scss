@@ -7,15 +7,16 @@
 
   &__profile {
     @extend %flex-row;
+    flex-wrap: wrap;
+    justify-content: center;
     align-items: center;
 
     &__pic {
-      width: 20em;
-      height: 30em;
-      background-size: cover;
-      background-position: center;
-      background-repeat: no-repeat;
       filter: grayscale(80%);
+
+      img {
+        max-width: 30em;
+      }
     }
 
     &__summary {
