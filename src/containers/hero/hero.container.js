@@ -1,14 +1,36 @@
 import './hero.scss';
+import _ from 'lodash';
 import React, { Component, PropTypes } from 'react';
 import { connect } from 'react-redux'
 
 class HeroContainer extends Component {
   constructor() {
     super();
+    this.state = {
+      showChevron: '',
+    };
+    this.handleScroll = _.throttle(this._handleScroll.bind(this), 200);
+  }
+
+  _handleScroll(e) {
+    const scrollTop = e.srcElement.body.scrollTop;
+    if (scrollTop > 20) {
+      this.setState({
+        showChevron: 'hero__indicator--off',
+      });
+    } else {
+      this.setState({
+        showChevron: '',
+      });
+    }
   }
 
   componentDidMount() {
-    console.log('here');
+    window.addEventListener('scroll', this.handleScroll);
+  }
+
+  componentWillUnmount() {
+    window.removeEventListener('scroll', this.handleScroll);
   }
 
   render() {
@@ -18,6 +40,8 @@ class HeroContainer extends Component {
       location: 'Sunnyvale, CA',
       tagline: 'Aesthetically driven self-taught programmer',
     };
+
+    const showChevron = this.state.showChevron;
 
     return (
       <div className="hero">
@@ -37,7 +61,7 @@ class HeroContainer extends Component {
           </div>
         </div>
 
-        <div className="hero__indicator">
+        <div className={`hero__indicator ${showChevron}`}>
           <i className="fa fa-chevron-down"></i>
         </div>
       </div>

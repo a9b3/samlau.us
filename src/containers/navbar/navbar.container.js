@@ -25,15 +25,21 @@ class NavbarContainer extends Component {
         </div>
 
         <div className="end">
-          <div className="navbar__item">
+          <a href="https://soundcloud.com/ghstkng"
+            target="_blank"
+            className="navbar__item">
             <i className="fa fa-soundcloud"></i>
-          </div>
-          <div className="navbar__item">
+          </a>
+          <a href="https://www.linkedin.com/in/sam-lau-708502104"
+            target="_blank"
+            className="navbar__item">
             <i className="fa fa-linkedin"></i>
-          </div>
-          <div className="navbar__item">
+          </a>
+          <a href="https://github.com/esayemm"
+            target="_blank"
+            className="navbar__item">
             <i className="fa fa-github"></i>
-          </div>
+          </a>
           <Link to="/about"
             className="navbar__item">
             About
