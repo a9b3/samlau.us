@@ -1,7 +1,9 @@
 import './modal.scss';
 import React, { Component, PropTypes } from 'react';
+import ReactTransitionGroup from 'react-addons-transition-group';
 import { connect } from 'react-redux'
 import ContactModalContainer from './contact-modal/contact-modal.container.js';
+import store from '../../store.js';
 import { flipModal } from '../../services/modal.js';
 
 class ModalContainer extends Component {
@@ -16,27 +18,23 @@ class ModalContainer extends Component {
     this.props.flipModal();
   }
 
-  showHide(modalShow) {
-    return (modalShow) ? 'modal--show' : '';
-  }
-
-  componentWillLeave(cb) {
-    debugger;
-  }
-
   render() {
     const {
       modal,
+      leave,
     } = this.props;
 
-    return (
-      <div className={`modal ${this.showHide(modal.showModal)}`}
-        onClick={this.closeModalHandler}>
-        <div className="modal__box">
-          <ContactModalContainer closeModal={this.props.flipModal}/>
-        </div>
+    let leaveClass = '';
+    if (leave) {
+      leaveClass = 'modal--leave';
+    }
+
+    return <div className={`modal ${leaveClass}`}
+      onClick={this.closeModalHandler}>
+      <div className="modal__box">
+        <ContactModalContainer closeModal={this.props.flipModal}/>
       </div>
-    );
+    </div>;
   }
 }
 
@@ -49,3 +47,5 @@ function mapStateToProps(state, ownProps) {
 export default connect(mapStateToProps, {
   flipModal,
 })(ModalContainer);
+
+// export default ModalContainer;
