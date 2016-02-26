@@ -21,6 +21,7 @@
     &__summary {
       @extend %middle;
       padding: 5em;
+      max-width: 50em;
 
       &__header {
         @include rem-font-size(1.2);
