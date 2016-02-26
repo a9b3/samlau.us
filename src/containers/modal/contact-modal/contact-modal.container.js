@@ -20,9 +20,6 @@ class ContactModalContainer extends Component {
 
     setTimeout(() => {
       this.props.closeModal();
-      this.setState({
-        sendMailAnimation: '',
-      });
     }, 1200);
   }
 

@@ -23,8 +23,9 @@
     }
 
     .send-mail-animation {
-      animation: sendMail 1.2s infinite;
+      animation: sendMail 1.2s;
       animation-timing-function: cubic-bezier(.68, -.55, .265, 1.55);
+      animation-fill-mode: forwards;
     }
   }
 

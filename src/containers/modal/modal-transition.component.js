@@ -17,7 +17,7 @@ class TransitionWrapper extends Component {
     });
     setTimeout(() => {
       cb();
-    }, 1000);
+    }, 1200);
   }
 
   render() {
@@ -25,6 +25,10 @@ class TransitionWrapper extends Component {
       ...this.state,
     });
   }
+}
+
+TransitionWrapper.propTypes = {
+  children: PropTypes.node,
 }
 
 const KEY = 'MODAL_TRANSITION';
