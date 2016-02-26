@@ -10,12 +10,10 @@ class MainContainer extends Component {
   }
 
   render() {
-    return (
-      <span>
-        <HeroContainer />
-        <WorksContainer />
-      </span>
-    );
+    return <span>
+      <HeroContainer />
+      <WorksContainer />
+    </span>;
   }
 }
 
