@@ -49,6 +49,9 @@ class HeroContainer extends Component {
         <div className="hero__wrapper">
           <div className="hero__name">
             {hero.name}
+            <div className="hero__name__sit">
+              <img src="img/sit.png" alt="" />
+            </div>
           </div>
           <div className="hero__info">
             {hero.info}

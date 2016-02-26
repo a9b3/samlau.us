@@ -19,6 +19,18 @@
     font-weight: 700;
     text-transform: lowercase;
     margin-bottom: 2.4em;
+    position: relative;
+
+    &__sit {
+      position: absolute;
+      top: -1.9em;
+      right: 1em;
+
+      img {
+        width: 2em;
+        transform: scale(-1, 1);
+      }
+    }
   }
 
   &__info {
