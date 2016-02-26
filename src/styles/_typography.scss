@@ -2,6 +2,7 @@
   font-family: 'Proggy';
   src: url('./fonts/ProggyClean.ttf');
 }
+@import url(https://fonts.googleapis.com/css?family=Montserrat:400,700);
 
 $font-family: 'Helvetica Neue';
 $font-color: rgba($dark3, 0.8);
@@ -22,6 +23,7 @@ body {
 
 a {
   color: $link-color;
+  color: inherit;
 }
 
 p {

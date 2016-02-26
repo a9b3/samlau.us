@@ -1,0 +1,40 @@
+@import '~styles/shared';
+
+.work {
+  @extend %flex-row;
+  justify-content: center;
+  align-items: center;
+  padding: 5em 10em;
+  width: 100%;
+  margin: 5em 0;
+
+  &__img {
+    @extend %middle;
+    flex-grow: 1;
+    filter: grayscale(100%);
+
+    &__img {
+      width: 35em;
+      height: 20em;
+      background-repeat: no-repeat;
+      background-size: cover;
+      background-position: center;
+    }
+  }
+
+  &__summary {
+    @extend %middle;
+    flex-grow: 1;
+    text-align: left;
+    padding: 4em;
+
+    &__wrapper {
+      width: 40em;
+    }
+
+    &__header {
+      font-weight: 500;
+      margin: 1em 0;
+    }
+  }
+}

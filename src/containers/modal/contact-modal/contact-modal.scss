@@ -1,0 +1,44 @@
+@import '~styles/shared';
+
+.contact-modal {
+  @extend %flex-col;
+  background: white;
+  width: 30em;
+
+  &__textarea {
+    padding: 1em;
+    resize: none;
+    height: 10em;
+  }
+
+  &__button {
+    background: $green1;
+    color: white;
+    padding: 1em;
+    overflow: hidden;
+
+    .fa {
+      @include rem-font-size(2);
+      font-weight: 500;
+    }
+
+    .send-mail-animation {
+      animation: sendMail 1.2s infinite;
+      animation-timing-function: cubic-bezier(.68, -.55, .265, 1.55);
+    }
+  }
+
+  @keyframes sendMail {
+    0% {
+      transform: rotate(0);
+    }
+
+    50% {
+      transform: rotate(360deg);
+    }
+
+    100% {
+      transform: translate(1000%, 0);
+    }
+  }
+}

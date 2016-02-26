@@ -1,0 +1,33 @@
+@import '~styles/shared';
+
+.hero {
+  @extend %middle;
+  height: 100%;
+  animation: fadeIn 1s;
+
+  &__wrapper {
+    text-align: center;
+    max-width: 50%;
+
+    >* {
+      padding: .5em;
+    }
+  }
+
+  &__name {
+    @include rem-font-size(2.4);
+    font-weight: 700;
+    text-transform: lowercase;
+    margin-bottom: 2.4em;
+  }
+
+  &__info {
+    text-transform: lowercase;
+    font-weight: 500;
+  }
+
+  &__tagline {
+    padding: 1.5em;
+    text-transform: lowercase;
+  }
+}

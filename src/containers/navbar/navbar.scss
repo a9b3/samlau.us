@@ -1,0 +1,23 @@
+@import '~styles/shared';
+
+.navbar {
+  @extend %flex-row;
+  align-items: center;
+  padding: 0 2em;
+  width: 100%;
+  position: fixed;
+
+  &__item {
+    @extend %pointer;
+    @extend %hover;
+    padding: 1em;
+    font-weight: 500;
+
+    &__header {
+      @include rem-font-size(1.5);
+      font-weight: 700;
+      text-transform: lowercase;
+      font-family: Montserrat;
+    }
+  }
+}

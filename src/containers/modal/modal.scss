@@ -1,0 +1,22 @@
+@import '~styles/shared';
+
+.modal {
+  @extend %middle;
+  background: rgba(black, .5);
+  height: 100%;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: $z-index-high;
+  visibility: hidden;
+
+  &--show {
+    visibility: inherit;
+    animation: fadeIn .5s;
+
+    .modal__box {
+      animation: fadeInUp .8s;
+      animation-timing-function: cubic-bezier(.68, -.55, .265, 1.55);
+    }
+  }
+}

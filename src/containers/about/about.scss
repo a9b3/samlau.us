@@ -1,0 +1,32 @@
+@import '~styles/shared';
+
+.about {
+  @extend %middle;
+  animation: fadeIn 1s;
+  height: 100%;
+
+  &__profile {
+    @extend %flex-row;
+    align-items: center;
+
+    &__pic {
+      width: 20em;
+      height: 20em;
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      filter: grayscale(80%);
+    }
+
+    &__summary {
+      @extend %middle;
+      padding: 5em;
+
+      &__header {
+        @include rem-font-size(1.2);
+        margin: 2em 0;
+        font-weight: 500;
+      }
+    }
+  }
+}

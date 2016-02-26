@@ -1,0 +1,9 @@
+@import '~styles/shared';
+
+.works {
+  @extend %flex-col;
+  animation: fadeIn 1s;
+  align-items: center;
+  justify-content: center;
+  min-height: 100%;
+}

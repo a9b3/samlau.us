@@ -1,0 +1,12 @@
+@import '~styles/shared';
+
+.footer {
+  @extend %flex-row;
+  align-items: center;
+  padding: 4em 2em;
+  color: $dark5;
+
+  &__item {
+    padding: 1em;
+  }
+}

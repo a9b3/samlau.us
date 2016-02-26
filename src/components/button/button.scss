@@ -1,0 +1,15 @@
+@import '~styles/shared';
+
+.button {
+  @extend %pointer;
+  border: 1px solid $dark3;
+  border-radius: 1.2em;
+  padding: .5em 1em;
+  transition: all .4s;
+
+  &:hover {
+    background: $dark3;
+    color: white;
+    transition: all .4s;
+  }
+}

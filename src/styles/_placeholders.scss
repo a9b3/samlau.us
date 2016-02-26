@@ -18,6 +18,8 @@
   display: flex;
 
   >.end {
+    display: inherit;
+    align-items: inherit;
     margin-left: auto;
   }
 }
@@ -27,6 +29,8 @@
   flex-direction: column;
 
   >.end {
+    display: inherit;
+    align-items: inherit;
     margin-top: auto;
   }
 }
