@@ -6,26 +6,46 @@ class ContactModalContainer extends Component {
   constructor() {
     super();
     this.onSubmit = this.onSubmit.bind(this);
+    this.onChange = this.onChange.bind(this);
+    this._closeModal = this._closeModal.bind(this);
     this.state = {
       sendMailAnimation: '',
+      error: undefined,
     };
+  }
+
+  _closeModal() {
+    this.setState({
+      sendMailAnimation: 'send-mail-animation',
+    });
+    setTimeout(() => {
+      this.props.closeModal();
+    }, 1200);
   }
 
   onSubmit(e) {
     e.preventDefault();
     const textarea = this.refs.textarea;
     this.setState({
-      sendMailAnimation: 'send-mail-animation',
+      sendMailAnimation: 'sending-mail-animation',
     });
 
     setTimeout(() => {
-      this.props.closeModal();
+      this._closeModal();
     }, 1200);
+  }
+
+  onChange(e) {
+    debugger;
   }
 
   render() {
     return <form className="contact-modal"
-      onSubmit={this.onSubmit}>
+      onSubmit={this.onSubmit}
+      onChange={this.onChange}>
+
+      <input type="text" placeholder="Your Email" />
+      <input type="text" placeholder="Subject" />
 
       <textarea className="contact-modal__textarea"
         placeholder="Say Hello!"

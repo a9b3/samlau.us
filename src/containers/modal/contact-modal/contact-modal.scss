@@ -5,6 +5,10 @@
   background: white;
   width: 30em;
 
+  input {
+    padding: 1em;
+  }
+
   &__textarea {
     padding: 1em;
     resize: none;
@@ -26,6 +30,21 @@
       animation: sendMail 1.2s;
       animation-timing-function: cubic-bezier(.68, -.55, .265, 1.55);
       animation-fill-mode: forwards;
+    }
+
+    .sending-mail-animation {
+      animation: sendingMail .6s infinite;
+      animation-timing-function: cubic-bezier(.68, -.55, .265, 1.55);
+    }
+  }
+
+  @keyframes sendingMail {
+    0% {
+      transform: rotate(0);
+    }
+
+    100% {
+      transform: rotate(360deg);
     }
   }
 
