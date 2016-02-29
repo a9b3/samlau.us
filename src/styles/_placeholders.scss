@@ -49,3 +49,7 @@
     transition: opacity .2s;
   }
 }
+
+%unclickable {
+  user-select: none;
+}

@@ -2,6 +2,7 @@
 
 .navbar {
   @extend %flex-row;
+  @extend %unclickable;
   align-items: center;
   padding: 0 2em;
   width: 100%;

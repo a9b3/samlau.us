@@ -35,8 +35,12 @@ class ContactModalContainer extends Component {
     }, 1200);
   }
 
+  componentWillUnmount() {
+
+  }
+
   onChange(e) {
-    debugger;
+
   }
 
   render() {

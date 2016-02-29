@@ -44,6 +44,10 @@ class ModalContainer extends Component {
         style={style}>
         {interpolatingStyle => {
 
+          if (interpolatingStyle.x === 0) {
+            return null;
+          }
+
           const modalStyle = {
             opacity: interpolatingStyle.x,
           };
