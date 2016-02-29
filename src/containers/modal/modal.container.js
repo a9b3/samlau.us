@@ -36,25 +36,55 @@ class ModalContainer extends Component {
   render() {
     const leave = this.state;
     const {
+      flipModal,
       modal,
     } = this.props;
 
-    let leaveClass = '';
-    if (leave) {
-      leaveClass = 'modal--leave';
+    const style = {};
+    if (modal.showModal) {
+      style.x = spring(1);
+      style.y = spring(0);
+    } else {
+      style.x = spring(0);
+      style.y = spring(100);
     }
 
     return (
-      <Motion>
+      <Motion
+        defaultStyle={{
+          x: 0,
+          y: 100,
+        }}
+        style={style}>
+        {interpolatingStyle => {
+
+          const modalStyle = {
+            opacity: interpolatingStyle.x,
+          };
+
+          console.log(modalStyle.opacity);
+
+          if (interpolatingStyle.x === 0) {
+            modalStyle.visibility = 'hidden';
+          }
+
+          const modalBoxStyle = {
+            transform: `translate(0, ${interpolatingStyle.y}%)`,
+          };
+
+          return (
+            <div className="modal"
+              style={modalStyle}
+              onClick={this.closeModalHandler}>
+              <div className="modal__box"
+                style={modalBoxStyle}>
+                <ContactModalContainer closeModal={this.props.flipModal}/>
+              </div>
+            </div>
+          );
+        }}
       </Motion>
     );
-
-    return <div className={`modal ${leaveClass}`}
-      onClick={this.closeModalHandler}>
-      <div className="modal__box">
-        <ContactModalContainer closeModal={this.props.flipModal}/>
-      </div>
-    </div>;
   }
 }
 

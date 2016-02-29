@@ -7,22 +7,24 @@
   position: fixed;
   top: 0;
   width: 100%;
+  opacity: 0;
   z-index: $z-index-mid;
-  animation: fadeIn .5s;
+  /* animation: fadeIn .5s; */
 
   .modal__box {
-    animation: fadeInUp .8s;
-    animation-timing-function: cubic-bezier(.68, -.55, .265, 1.55);
+    transform: translate(0, 100%);
+    /* animation: fadeInUp .8s; */
+    /* animation-timing-function: cubic-bezier(.68, -.55, .265, 1.55); */
   }
-
-  &--leave {
-    animation: fadeOut 1s;
-    animation-fill-mode: forwards;
-
-    .modal__box {
-      animation: fadeOutDown .8s;
-      animation-fill-mode: forwards;
-      animation-timing-function: cubic-bezier(.68, -.55, .265, 1.55);
-    }
-  }
+  /*  */
+  /* &--leave { */
+  /*   animation: fadeOut 1s; */
+  /*   animation-fill-mode: forwards; */
+  /*  */
+  /*   .modal__box { */
+  /*     animation: fadeOutDown .8s; */
+  /*     animation-fill-mode: forwards; */
+  /*     animation-timing-function: cubic-bezier(.68, -.55, .265, 1.55); */
+  /*   } */
+  /* } */
 }
