@@ -1,11 +1,9 @@
 import './modal.scss';
 import React, { Component, PropTypes } from 'react';
-import ReactTransitionGroup from 'react-addons-transition-group';
+import { Motion, spring } from 'react-motion';
 import { connect } from 'react-redux'
 import ContactModalContainer from './contact-modal/contact-modal.container.js';
-import store from '../../store.js';
 import { flipModal } from '../../services/modal.js';
-import { Motion, spring } from 'react-motion';
 
 class ModalContainer extends Component {
   constructor() {
@@ -20,7 +18,6 @@ class ModalContainer extends Component {
   }
 
   render() {
-    const leave = this.state;
     const {
       flipModal,
       modal,
@@ -51,8 +48,6 @@ class ModalContainer extends Component {
           const modalStyle = {
             opacity: interpolatingStyle.x,
           };
-
-          console.log(modalStyle.opacity);
 
           if (interpolatingStyle.x === 0) {
             modalStyle.visibility = 'hidden';
