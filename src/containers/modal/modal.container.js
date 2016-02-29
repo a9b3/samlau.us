@@ -55,7 +55,7 @@ class ModalContainer extends Component {
           }
 
           const modalBoxStyle = {
-            transform: `translate(0, ${interpolatingStyle.y}%)`,
+            transform: `translate3d(0, ${interpolatingStyle.y}%, 0)`,
           };
 
           return (
