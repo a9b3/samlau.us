@@ -3,7 +3,6 @@ import React, { Component, PropTypes } from 'react';
 import { connect } from 'react-redux'
 import NavbarContainer from '../navbar/navbar.container.js';
 import ModalContainer from '../modal/modal.container.js';
-import ModalTransitionComponent from '../modal/modal-transition.component.js';
 
 class AppContainer extends Component {
   constructor() {
@@ -19,7 +18,7 @@ class AppContainer extends Component {
       <NavbarContainer />
       {this.props.children}
 
-      <ModalTransitionComponent showModal={modal.showModal}/>
+      <ModalContainer />
     </div>;
   }
 }

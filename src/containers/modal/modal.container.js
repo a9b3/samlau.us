@@ -5,7 +5,6 @@ import { connect } from 'react-redux'
 import ContactModalContainer from './contact-modal/contact-modal.container.js';
 import store from '../../store.js';
 import { flipModal } from '../../services/modal.js';
-import connectWithTransitionGroup from 'connect-with-transition-group';
 import { Motion, spring } from 'react-motion';
 
 class ModalContainer extends Component {
@@ -18,19 +17,6 @@ class ModalContainer extends Component {
     const classNames = e.target.className.split(' ');
     if (!classNames.some(name => name === 'modal')) return;
     this.props.flipModal();
-  }
-
-  componentWillEnter(cb) {
-    cb();
-  }
-
-  componentWillLeave(cb) {
-    this.setState({
-      leave: true,
-    });
-    setTimeout(() => {
-      cb();
-    }, 1200);
   }
 
   render() {
@@ -94,8 +80,6 @@ function mapStateToProps(state, ownProps) {
   };
 }
 
-export default connectWithTransitionGroup(connect(mapStateToProps, {
+export default connect(mapStateToProps, {
   flipModal,
-}, null, {
-  withRef: true,
-})(ModalContainer));
+})(ModalContainer);
