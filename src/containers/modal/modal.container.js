@@ -6,6 +6,7 @@ import ContactModalContainer from './contact-modal/contact-modal.container.js';
 import store from '../../store.js';
 import { flipModal } from '../../services/modal.js';
 import connectWithTransitionGroup from 'connect-with-transition-group';
+import { Motion, spring } from 'react-motion';
 
 class ModalContainer extends Component {
   constructor() {
@@ -42,6 +43,11 @@ class ModalContainer extends Component {
     if (leave) {
       leaveClass = 'modal--leave';
     }
+
+    return (
+      <Motion>
+      </Motion>
+    );
 
     return <div className={`modal ${leaveClass}`}
       onClick={this.closeModalHandler}>
