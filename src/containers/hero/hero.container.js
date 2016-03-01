@@ -34,12 +34,9 @@ class HeroContainer extends Component {
   }
 
   render() {
-    const hero = {
-      name: 'Sam Lau',
-      info: 'Front-End Engineer @ Udacity',
-      location: 'Sunnyvale, CA',
-      tagline: 'Aesthetically driven self-taught programmer',
-    };
+    const {
+      hero,
+    } = this.props.app;
 
     const showChevron = this.state.showChevron;
 

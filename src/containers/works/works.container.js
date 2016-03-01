@@ -6,22 +6,6 @@ import WorkComponent from './work/work.component.js';
 class WorksContainer extends Component {
   constructor() {
     super();
-    this.state = {
-      works: [
-        {
-          imageUrl: 'img/webmidi.png',
-          description: 'An exploration into the web audio apis, building a daw using the browser.',
-          url: '#',
-          title: 'webmidi',
-        },
-        {
-          imageUrl: 'img/appformix.png',
-          description: 'Cloud datacenter analytics dashboard, using socket.io for real-time and d3 for the visualizations.',
-          url: '#',
-          title: 'appformix',
-        },
-      ],
-    };
     this.renderWorks = this.renderWorks.bind(this);
   }
 
@@ -32,9 +16,13 @@ class WorksContainer extends Component {
   }
 
   render() {
+    const {
+      works,
+    } = this.props.app;
+
     return (
       <div className="works">
-        {this.renderWorks(this.state.works)}
+        {this.renderWorks(works)}
       </div>
     );
   }
