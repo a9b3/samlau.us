@@ -4,7 +4,7 @@ import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux'
 import axios from 'axios';
 
-const EMAIL_ENDPOINT = 'http://localhost:9000/api/send_mail';
+const EMAIL_ENDPOINT = '/api/send_mail';
 
 class ContactModalContainer extends Component {
   constructor() {

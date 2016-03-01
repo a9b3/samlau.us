@@ -28,6 +28,10 @@ function startServer() {
   app.use(bodyParser.urlencoded({extended:true}));
   app.use(bodyParser.json());
 
+  app.get('/api/testing', function(req, res) {
+    res.send('ok cool!');
+  });
+
   app.post('/api/send_mail', function(req, res) {
     const body = req.body;
     const mailOptions = {
