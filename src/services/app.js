@@ -1,7 +1,7 @@
 const app = {
   hero: {
     name: 'Sam Lau',
-    info: 'Front-End Engineer @ Udacity',
+    info: 'Front-End Engineer @ Trimian',
     location: 'Sunnyvale, CA',
     tagline: 'Aesthetically driven self-taught programmer',
   },
