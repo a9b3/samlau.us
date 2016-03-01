@@ -9,14 +9,13 @@ const app = {
     {
       imageUrl: 'img/webmidi.png',
       description: 'An exploration into the web audio apis, building a daw using the browser.',
-      url: '#',
+      url: 'http://webmidi.samlau.us/',
       title: 'webmidi',
     },
     {
       imageUrl: 'img/appformix.png',
       description: `Cloud datacenter analytics dashboard, using socket.io for
       real-time and d3 for the visualizations.`,
-      url: '#',
       title: 'appformix',
     },
   ],

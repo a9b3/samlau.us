@@ -1,16 +1,21 @@
 import './work.scss';
 import React, { PropTypes } from 'react';
+import OptionalAContainer from '../../../components/optional-a.container.js';
 
 const WorkComponent = props =>
 <div className="work">
-  <div className="work__img">
+  <OptionalAContainer href={props.url}
+    className="work__img"
+    target="_blank">
     <img src={props.imageUrl} alt="preview" />
-  </div>
+  </OptionalAContainer>
   <div className="work__summary">
     <div className="work__summary__wrapper">
-      <div className="work__summary__header">
+      <OptionalAContainer className="work__summary__header"
+        href={props.url}
+        target="_blank">
         {props.title}
-      </div>
+      </OptionalAContainer>
       {props.description}
     </div>
   </div>
