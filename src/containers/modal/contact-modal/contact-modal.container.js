@@ -2,7 +2,9 @@ import './contact-modal.scss';
 import React, { Component, PropTypes } from 'react';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux'
-import { sendEmail } from '../../../services/send-email.js';
+import axios from 'axios';
+
+const EMAIL_ENDPOINT = 'http://localhost:9000/api/send_mail';
 
 class ContactModalContainer extends Component {
   constructor() {
@@ -10,69 +12,84 @@ class ContactModalContainer extends Component {
     this.onSubmit = this.onSubmit.bind(this);
     this._closeModal = this._closeModal.bind(this);
     this.state = {
-      sendMailAnimation: '',
+      inProgress: false,
       sent: false,
+      error: undefined,
     };
   }
 
   _closeModal() {
     this.setState({
-      sendMailAnimation: 'send-mail-animation',
+      sent: true,
     });
+
     setTimeout(() => {
-      this.props.closeModal();
+      this.props.closeModal(false);
     }, 1200);
   }
 
   onSubmit(e) {
-    console.log('here', this.state.sent);
     e.preventDefault();
-    if (this.state.sent) return;
-
-    const {
-      sendEmail,
-    } = this.props;
-
-    const email = this.refs.email.value;
-    const subject = this.refs.subject.value;
-    const textarea = this.refs.textarea.value;
+    if (this.state.inProgress || this.state.sent) return;
 
     const message = {
-      email,
-      subject,
-      message: textarea,
+      email: this.refs.email.value,
+      subject: this.refs.subject.value,
+      message: this.refs.textarea.value,
     };
 
     this.setState({
-      sent: true,
+      inProgress: true,
     });
 
-    sendEmail(message)
+    axios.post(EMAIL_ENDPOINT, message)
     .then(() => {
       this._closeModal();
     })
     .catch(e => {
       this.setState({
-        sent: false,
+        error: e,
       });
-    });
+    })
+    .finally(() => {
+      this.setState({
+        inProgress: false,
+      });
+    })
+  }
+
+  renderError(error) {
+    console.log(error);
+    if (error) {
+      return <div className="contact-modal__error">
+        Server Error
+      </div>;
+    } else {
+      return null;
+    }
   }
 
   render() {
     const {
-      email,
-    } = this.props;
+      error,
+      inProgress,
+      sent,
+    } = this.state;
 
-    let sendEmailAnimation = (email.inProgress) ? 'sending-mail-animation' : '';
-    if (this.state.sendMailAnimation) {
-      sendEmailAnimation = this.state.sendMailAnimation;
+    let sendEmailAnimation;
+    if (inProgress) {
+      sendEmailAnimation = 'sending-mail-animation';
+    } else if (sent) {
+      sendEmailAnimation = 'send-mail-animation';
+    } else {
+      sendEmailAnimation = '';
     }
-
-    const error = email.error;
 
     return <form className="contact-modal"
       onSubmit={this.onSubmit}
       >
+
+      {this.renderError(error)}
 
       <input type="text"
         placeholder="Your Email"
@@ -82,7 +99,6 @@ class ContactModalContainer extends Component {
         placeholder="Subject"
         ref="subject"
       />
-
       <textarea className="contact-modal__textarea"
         placeholder="Say Hello!"
         ref="textarea"
@@ -107,5 +123,5 @@ function mapStateToProps(state, ownProps) {
 }
 
 export default connect(mapStateToProps, {
-  sendEmail,
+  // ...
 })(ContactModalContainer);

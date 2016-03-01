@@ -9,6 +9,13 @@
     padding: 1em;
   }
 
+  &__error {
+    padding: 1em;
+    background: $red6;
+    color: $red3;
+    animation: fadeIn 1s;
+  }
+
   &__textarea {
     padding: 1em;
     resize: none;

@@ -44,7 +44,7 @@ class NavbarContainer extends Component {
           About
         </Link>
         <div className="navbar__item">
-          <ButtonComponent onClick={flipModal}>
+          <ButtonComponent onClick={flipModal.bind(flipModal, true)}>
             Contact
           </ButtonComponent>
         </div>

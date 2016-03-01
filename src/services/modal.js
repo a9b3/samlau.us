@@ -2,8 +2,8 @@ const MODAL_SWITCH = 'MODAL_SWITCH';
 
 let showModal = false;
 
-export function flipModal() {
-  showModal = !showModal;
+export function flipModal(arg = !showModal) {
+  showModal = arg;
 
   return {
     type: MODAL_SWITCH,

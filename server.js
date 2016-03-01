@@ -36,13 +36,17 @@ function startServer() {
       text: body.message,
     };
 
-    sendMail(mailOptions)
-    .then(info => {
-      res.send(info);
-    })
-    .catch(e => {
-      res.status(500).send(e);
-    });
+    if (mailOptions.text.trim() === '') {
+      res.send({});
+    } else {
+      sendMail(mailOptions)
+      .then(info => {
+        res.send(info);
+      })
+      .catch(e => {
+        res.status(500).send(e);
+      });
+    }
   });
 
   app.use(express.static('./dist/'));

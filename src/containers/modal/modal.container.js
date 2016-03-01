@@ -14,8 +14,7 @@ class ModalContainer extends Component {
   closeModalHandler(e) {
     const classNames = e.target.className.split(' ');
     if (!classNames.some(name => name === 'modal')) return;
-    if (this.props.email.inProgress) return;
-    this.props.flipModal();
+    this.props.flipModal(false);
   }
 
   render() {
