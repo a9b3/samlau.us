@@ -59,7 +59,6 @@ class ContactModalContainer extends Component {
   }
 
   renderError(error) {
-    console.log(error);
     if (error) {
       return <div className="contact-modal__error">
         Server Error
