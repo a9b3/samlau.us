@@ -1,7 +1,7 @@
 const app = {
   hero: {
     name: 'Sam Lau',
-    info: 'Front-End Engineer @ Trimian',
+    info: 'Front-End Engineer @ Udacity',
     location: 'Sunnyvale, CA',
     tagline: 'Aesthetically driven self-taught programmer',
   },
@@ -20,7 +20,7 @@ const app = {
     },
   ],
   about: {
-    picUrl: 'img/profile.jpg',
+    picUrl: 'img/profile.png',
     summary: `Hello, my name is Sam and my passion is making cool things.
       I am a self-taught programmer and musician. I love to express myself
       through creative mediums, whether it be through code or music. I believe
