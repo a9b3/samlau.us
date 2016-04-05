@@ -20,7 +20,7 @@ const app = {
     },
   ],
   about: {
-    picUrl: 'img/profile.png',
+    picUrl: 'img/profile.jpg',
     summary: `Hello, my name is Sam and my passion is making cool things.
       I am a self-taught programmer and musician. I love to express myself
       through creative mediums, whether it be through code or music. I believe
